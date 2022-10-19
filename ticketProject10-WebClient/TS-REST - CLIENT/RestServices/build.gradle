@@ -1,0 +1,52 @@
+//plugins {
+//    id 'java'
+//}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.3.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'TS-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    compile project (':TicketModel')
+    compile project (':TicketPersistance')
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.jayway.jsonpath:json-path')
+
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0")
+    compile group: 'com.fasterxml.jackson.core',name: 'jackson-annotations', version: '2.9.5'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.5'
+    //implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.12.3'
+
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin:'application'
+
+sourceCompatibility = 1.8
+mainClassName='StartRMIServer'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    compile project (':TicketModel')
+    compile project (':TicketServices')
+    compile project (':TicketPersistance')
+    compile project (':TicketNetworking')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+test {
+    useJUnitPlatform()
+}

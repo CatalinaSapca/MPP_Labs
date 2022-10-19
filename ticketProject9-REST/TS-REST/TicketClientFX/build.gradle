@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+
+sourceCompatibility = 1.8
+mainClassName='ticket.client.StartRMIClientFX'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.controls', 'javafx.fxml'  ]
+}
+
+dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile project (':TicketModel')
+    compile project (':TicketServices')
+    compile project (':TicketNetworking')
+
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.10.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.10.0'
+}
+
+//mainClassName='ticket.client.StartRpcClientFX'
+
+test {
+    useJUnitPlatform()
+}

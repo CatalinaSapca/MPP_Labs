@@ -1,0 +1,9 @@
+rootProject.name = 'TicketSystem'
+include 'TicketClientFX'
+include 'TicketModel'
+include 'TicketNetworking'
+include 'TicketPersistance'
+include 'TicketServer'
+include 'TicketServices'
+include 'RestServices'
+

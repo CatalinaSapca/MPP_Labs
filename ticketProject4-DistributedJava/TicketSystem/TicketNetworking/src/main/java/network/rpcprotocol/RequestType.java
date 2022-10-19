@@ -1,0 +1,6 @@
+package network.rpcprotocol;
+
+
+public enum RequestType {
+    LOGIN, LOGOUT, GET_LOGGED_FRIENDS, SEND_MESSAGE, ADD_BUYER, BUY_TICKET, GET_ALL_AR, GET_ALL_AR_FROM_DATE, FIND_SELLER_BY_USERNAME;
+}

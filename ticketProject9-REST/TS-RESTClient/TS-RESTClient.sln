@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TS-RESTClient", "CSharpRestClient\TS-RESTClient.csproj", "{85D7E34B-F404-4A4F-99A2-ED79806F64AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85D7E34B-F404-4A4F-99A2-ED79806F64AB}.Debug|x86.ActiveCfg = Debug|x86
+		{85D7E34B-F404-4A4F-99A2-ED79806F64AB}.Debug|x86.Build.0 = Debug|x86
+		{85D7E34B-F404-4A4F-99A2-ED79806F64AB}.Release|x86.ActiveCfg = Release|x86
+		{85D7E34B-F404-4A4F-99A2-ED79806F64AB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DF6F38F-51D2-4BCC-9AE6-A4DA6924F5A9}
+	EndGlobalSection
+EndGlobal

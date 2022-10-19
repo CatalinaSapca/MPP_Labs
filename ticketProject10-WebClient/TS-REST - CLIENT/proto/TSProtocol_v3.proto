@@ -1,0 +1,58 @@
+syntax="proto3";
+package chat.protocol;
+
+option java_package = "ticket.network.protobuffprotocol";
+option java_outer_classname = "TSProtobufs";
+
+message Seller{
+     string id = 1;
+     string firstName=2;
+     string lastName=3;
+     string password=4;
+     string username=5;
+}
+
+message Buyer{
+     string id=1;
+     string idAR=2;
+     string firstName=3;
+     string lastName=4;
+     string noTickets=5;
+}
+
+message ArtisticRepresentation{
+     string id=1;
+     string artistName=2;
+     string data=3;
+     string location=4;
+     string availableSeats=5;
+     string soldSeats=6;
+}
+
+message TSRequest {
+  enum Type {Unknown=0; Login = 1; Logout = 2; AddBuyer = 3; BuyTicket=4; GetAllAR=5; GetAllARFromDate=6; FindSellerByUsername=7; }
+
+  // Identifies which request is filled in.
+   Type type = 1;
+
+  // One of the following will be filled in, depending on the type.
+   oneof payload{
+       Seller seller = 2;
+       Buyer buyer = 3;
+       ArtisticRepresentation artisticRepresentation =4;
+  }
+}
+
+message TSResponse{
+   enum Type { Unknown=0; Ok = 1; Error = 2; Login=3; Logout=4; AddBuyer=5; BuyTicket=6; GetAllAR=7; GetAllARFromDate=8; FindSellerByUsername=9; BoughtTicket=10;}
+
+     // Identifies which request is filled in.
+      Type type = 1;
+
+     // One of the following will be filled in, depending on the type.
+      string error = 2;
+      Seller seller = 3;
+      Buyer buyer = 4 ;
+      repeated ArtisticRepresentation artisticRepresentation = 5;
+
+}
